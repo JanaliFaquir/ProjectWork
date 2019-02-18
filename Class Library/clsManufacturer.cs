@@ -1,18 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text; 
 
 namespace Class_Library
 {
     public class clsManufacturer
     {
-        public bool Active { get; set; }
-        public bool Available { get; set; }
-        public DateTime YearMade { get; set; }
-        public int ManufacturerID { get; set; }
-        public int BatchProductionNo { get; set; }
-        public int PhoneNo { get; set; }
-        public string CarModel { get; set; }
-        public string ChairMan { get; set; }
-        public string Email { get; set; }
+        //private data member for the Available property 
+        private Boolean mAvailable;
+        //private data member for the yearmade property
+        private DateTime mYearMade;
+        //private data member for the manufacturerid property
+        private Int32 ManufacturerID;
+       //private data member for the batchproductionno property
+        private Int32 BatchProductionNo;
+       //private data member for the phoneno property
+        private Int32 PhoneNo;
+       //private data member for the carmodel property
+        private String CarModel;
+        //private data member for the chairman property
+        private String ChairMan;
+        //private data member for the email property
+         private String Email;
         public bool Find(int ManufacturerID)
         { //always return true 
             return true;
