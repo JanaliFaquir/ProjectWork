@@ -44,6 +44,8 @@ public class clsDataConnection
         //connectionString = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=" + GetDBName() + ";Integrated Security=True;Connect Timeout=30";
         //connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + GetDBName() + "\";Integrated Security=True;Connect Timeout=30";
         connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"###\";Integrated Security=True;Connect Timeout=30";
+        SomePath = "I:\\team02 - Noof, Janali, Adhal\\App_Data\\auction.mdf";
+        //I:\\team02 - Noof, Janali, Adhal\\App_Data\\auction.mdf
         connectionString = connectionString.Replace("###", SomePath);
         return connectionString;
     }
@@ -224,5 +226,3 @@ public class clsDataConnection
         }
     }
 }
-
-
