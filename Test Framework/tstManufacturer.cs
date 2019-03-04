@@ -48,7 +48,7 @@ namespace Test_Framework
             //creat an instance of the class we want to create 
             clsManufacturer AnManufacturer = new clsManufacturer();
             // create some test data to assign to the property 
-            Int32 TestData = 1;
+            Int32 TestData = 456;
             // assign the data to the property 
             AnManufacturer.ManufacturerID = TestData;
             // test to see tha the two values are the same 
@@ -61,7 +61,7 @@ namespace Test_Framework
             //creat an instance of the class we want to create 
             clsManufacturer AnManufacturer = new clsManufacturer();
             // create some test data to assign to the property 
-            Int32 TestData = 1;
+            Int32 TestData = 456;
             // assign the data to the property 
             AnManufacturer.BatchProductionNo = TestData;
             // test to see tha the two values are the same 
@@ -74,7 +74,7 @@ namespace Test_Framework
             //creat an instance of the class we want to create 
             clsManufacturer AnManufacturer = new clsManufacturer();
             // create some test data to assign to the property 
-            Int32 TestData = 1;
+            Int32 TestData = 456;
             // assign the data to the property 
             AnManufacturer.PhoneNo = TestData;
             // test to see tha the two values are the same 
@@ -87,7 +87,7 @@ namespace Test_Framework
             //create an instance of the class we want to create 
             clsManufacturer AnManufacturer = new clsManufacturer();
             // create some test data to assign to the property 
-            String TestData = "AB1";
+            String TestData = "a31";
             // assign the data to the property 
             AnManufacturer.CarModel = TestData;
             // test to see tha the two values are the same 
@@ -100,7 +100,7 @@ namespace Test_Framework
             //create an instance of the class we want to create 
             clsManufacturer AnManufacturer = new clsManufacturer();
             // create some test data to assign to the property 
-            String TestData = "Zack Lee";
+            String TestData = "zack";
             // assign the data to the property 
             AnManufacturer.ChairMan = TestData;
             // test to see tha the two values are the same 
@@ -113,7 +113,7 @@ namespace Test_Framework
             //create an instance of the class we want to create 
             clsManufacturer AnManufacturer = new clsManufacturer();
             // create some test data to assign to the property 
-            String TestData = "zacklee@manufacturer.com";
+            String TestData = "zack@gmail.com";
             // assign the data to the property 
             AnManufacturer.Email = TestData;
             // test to see tha the two values are the same 
@@ -128,14 +128,81 @@ namespace Test_Framework
             //boolean variable to store the result of the validation 
             Boolean Found = false;
             // create some test data to use with the method 
-            Int32 ManufacturerID = 1;
+            Int32 ManufacturerID = 456;
             // invoke the method 
             Found = AnManufacturer.Find(ManufacturerID);
             // test to see that the result is correct 
             Assert.IsTrue(Found);
         }
 
-     
+        [TestMethod]
+        public void TestManufacturerIDNoFound()
+        {
+            //create an instance of the class we want to create 
+            clsManufacturer AnManufacturer = new clsManufacturer();
+            //boolean variable to store the result of the validation 
+            Boolean Found = false;
+            // boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 ManufacturerID = 456;
+            // invoke the method 
+            Found = AnManufacturer.Find(ManufacturerID);
+            // check the manufacturer id
+            if (AnManufacturer.ManufacturerID != 456)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+
+
+        [TestMethod]
+        public void TestAvailableFound()
+        {
+            //create an instance of the class we want to create 
+            clsManufacturer AnManufacturer = new clsManufacturer();
+            //boolean variable to store the result of the validation 
+            Boolean Found = false;
+            // boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 ManufacturerID = 456;
+            // invoke the method 
+            Found = AnManufacturer.Find(ManufacturerID);
+            // check the property
+            if (AnManufacturer.Available != true)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+
+        [TestMethod]
+        public void TestYearMadeFound()
+        {
+            //create an instance of the class we want to create 
+            clsManufacturer AnManufacturer = new clsManufacturer();
+            //boolean variable to store the result of the validation 
+            Boolean Found = false;
+            // boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 ManufacturerID = 456;
+            // invoke the method 
+            Found = AnManufacturer.Find(ManufacturerID);
+            // check the property
+            if (AnManufacturer.YearMade != Convert.ToDateTime("04/03/2018")) 
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
 
     }
