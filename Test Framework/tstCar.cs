@@ -77,9 +77,9 @@ namespace Test_Framework
             //create some test data to assign to the property
             string TestData = "BMW";
             //assign the data to the property
-            ACar.CarName = TestData;
+            ACar.mCarName = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ACar.CarName, TestData);
+            Assert.AreEqual(ACar.mCarName, TestData);
         }
 
         [TestMethod]
@@ -90,9 +90,9 @@ namespace Test_Framework
             //create some test data to assign to the property
             string TestData = "E30";
             //assign the data to the property
-            ACar.Model = TestData;
+            ACar.mModel = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ACar.Model, TestData);
+            Assert.AreEqual(ACar.mModel, TestData);
         }
 
         [TestMethod]
@@ -103,9 +103,9 @@ namespace Test_Framework
             //create some test data to assign to the property
             string TestData = "Saloon";
             //assign the data to the property
-            ACar.BodyType = TestData;
+            ACar.mBodyType = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ACar.BodyType, TestData);
+            Assert.AreEqual(ACar.mBodyType, TestData);
         }
 
         [TestMethod]
@@ -116,9 +116,9 @@ namespace Test_Framework
             //create some test data to assign to the property
             decimal TestData = 2999.99m;
             //assign the data to the property
-            ACar.Price = TestData;
+            ACar.mPrice = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ACar.Price, TestData);
+            Assert.AreEqual(ACar.mPrice, TestData);
         }
 
         [TestMethod]
@@ -129,9 +129,46 @@ namespace Test_Framework
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign the data to the property
-            ACar.Stock = TestData;
+            ACar.mStock = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ACar.Stock, TestData);
+            Assert.AreEqual(ACar.mStock, TestData);
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCar ACar = new clsCar();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 CarID = 1;
+            //invoke the method
+            Found = ACar.Find(CarID);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestCarIDFound()
+        {
+            //create an instance of the class we want to create
+            clsCar ACar = new clsCar();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CarID = 1;
+            //invoke the method
+            Found = ACar.Find(CarID);
+            //check the car ID
+            if (ACar.CarID != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
         }
     }
 }
