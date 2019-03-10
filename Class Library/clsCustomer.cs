@@ -6,7 +6,7 @@ namespace Class_Library
     {
         //private data member for the customer no property
         private Int32 mCustomerNo;
-        private bool mActive;
+        private Boolean mActive;
         private DateTime mDateAdded;
         private string mFirstName;
         private string mSurname;
@@ -15,26 +15,13 @@ namespace Class_Library
         private string mEmail;
         private string mHouseNo;
         private string mPhoneNo;
-        private bool mTown;
+        private Boolean mTown;
         private DateTime mDateSold; 
 
-        public clsCustomer()
-        {
-        }
+      
 
        
-        
-  
-
-        public bool Find(int CustomerNo)
-        {
-            //set the private data member to the test data value
-            mCustomerNo = 1;
-          
-
-            //always return true
-            return true;
-        }
+      
         //public property for the customer no
         public int CustomerNo
         {
@@ -203,5 +190,33 @@ namespace Class_Library
                 mTown = value;
             }
         }
+        public bool Find(int CustomerNo)
+        {
+            //Create an instance if the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Customer no to search for 
+            DB.AddParameter("@CustomerNo", CustomerNo);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblCustomer_FilterByCustomerNo");
+            //if one record is found  (there should be either one or zero!)
+            if (DB.Count == 1)
+            
+                // set the private data members to the test data value
+                mCustomerNo = 1;
+                mActive = true;
+                mDateAdded = Convert.ToDateTime("19/11/2018");
+                mDateSold = Convert.ToDateTime("01/01/2019");
+                mFirstName = "John";
+                mSurname = "Smith";
+                mStreet = "Leicester Road";
+                mPostCode = "LE3 0GH";
+                mEmail = "a@hotmail.com";
+                mHouseNo = "11A";
+                mPhoneNo = "07476123255";
+                mTown = true;
+                //always return true
+                return true;
+            
+        }   
     }
 }
