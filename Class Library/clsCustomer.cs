@@ -200,23 +200,29 @@ namespace Class_Library
             DB.Execute("sproc_tblCustomer_FilterByCustomerNo");
             //if one record is found  (there should be either one or zero!)
             if (DB.Count == 1)
-            
-                // set the private data members to the test data value
-                mCustomerNo = 1;
-                mActive = true;
-                mDateAdded = Convert.ToDateTime("19/11/2018");
-                mDateSold = Convert.ToDateTime("01/01/2019");
-                mFirstName = "John";
-                mSurname = "Smith";
-                mStreet = "Leicester Road";
-                mPostCode = "LE3 0GH";
-                mEmail = "a@hotmail.com";
-                mHouseNo = "11A";
-                mPhoneNo = "07476123255";
-                mTown = true;
-                //always return true
+            {
+                //copy the data from the database to the private data members
+                mCustomerNo = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerNo"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+                mDateSold = Convert.ToDateTime(DB.DataTable.Rows[0]["DateSold"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mSurname = Convert.ToString(DB.DataTable.Rows[0]["Surname"]);
+                mStreet = Convert.ToString(DB.DataTable.Rows[0]["Street"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhonesNo"]);
+                mTown = Convert.ToBoolean(DB.DataTable.Rows[0]["Town"]);
+                //return that everyhting worked ok
                 return true;
-            
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
         }   
     }
 }
