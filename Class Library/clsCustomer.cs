@@ -6,7 +6,7 @@ namespace Class_Library
     {
         //private data member for the customer no property
         private Int32 mCustomerNo;
-        private bool mActive;
+        private Boolean mActive;
         private DateTime mDateAdded;
         private string mFirstName;
         private string mSurname;
@@ -15,26 +15,13 @@ namespace Class_Library
         private string mEmail;
         private string mHouseNo;
         private string mPhoneNo;
-        private bool mTown;
+        private Boolean mTown;
         private DateTime mDateSold; 
 
-        public clsCustomer()
-        {
-        }
+      
 
        
-        
-  
-
-        public bool Find(int CustomerNo)
-        {
-            //set the private data member to the test data value
-            mCustomerNo = 1;
-          
-
-            //always return true
-            return true;
-        }
+      
         //public property for the customer no
         public int CustomerNo
         {
@@ -203,5 +190,39 @@ namespace Class_Library
                 mTown = value;
             }
         }
+        public bool Find(int CustomerNo)
+        {
+            //Create an instance if the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Customer no to search for 
+            DB.AddParameter("@CustomerNo", CustomerNo);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblCustomer_FilterByCustomerNo");
+            //if one record is found  (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mCustomerNo = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerNo"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+                mDateSold = Convert.ToDateTime(DB.DataTable.Rows[0]["DateSold"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mSurname = Convert.ToString(DB.DataTable.Rows[0]["Surname"]);
+                mStreet = Convert.ToString(DB.DataTable.Rows[0]["Street"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhonesNo"]);
+                mTown = Convert.ToBoolean(DB.DataTable.Rows[0]["Town"]);
+                //return that everyhting worked ok
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+        }   
     }
 }
