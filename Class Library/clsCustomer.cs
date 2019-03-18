@@ -7,7 +7,6 @@ namespace Class_Library
         //private data member for the customer no property
         private Int32 mCustomerNo;
         private Boolean mActive;
-        private DateTime mDateAdded;
         private string mFirstName;
         private string mSurname;
         private string mStreet;
@@ -15,13 +14,11 @@ namespace Class_Library
         private string mEmail;
         private string mHouseNo;
         private string mPhoneNo;
-        private Boolean mTown;
-        private DateTime mDateSold; 
+        private string mTown;
+        private DateTime mDateSold;
+        private DateTime DateTemp;
 
-      
 
-       
-      
         //public property for the customer no
         public int CustomerNo
         {
@@ -48,20 +45,6 @@ namespace Class_Library
             {
                 //set the value of the private data member
                 mActive = value;
-            }
-        }
-        //public property for the customer no
-        public DateTime DateAdded
-        {
-            get
-            {
-                //return the private data
-                return mDateAdded;
-            }
-            set
-            {
-                //set the value of the private data member
-                mDateAdded = value;
             }
         }
         //public property for the customer no
@@ -177,7 +160,7 @@ namespace Class_Library
             }
         }
         //public property for the customer no
-        public bool Town
+        public string Town
         {
             get
             {
@@ -204,7 +187,6 @@ namespace Class_Library
                 //copy the data from the database to the private data members
                 mCustomerNo = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerNo"]);
                 mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
-                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
                 mDateSold = Convert.ToDateTime(DB.DataTable.Rows[0]["DateSold"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mSurname = Convert.ToString(DB.DataTable.Rows[0]["Surname"]);
@@ -212,8 +194,8 @@ namespace Class_Library
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
                 mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);
-                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhonesNo"]);
-                mTown = Convert.ToBoolean(DB.DataTable.Rows[0]["Town"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
+                mTown = Convert.ToString(DB.DataTable.Rows[0]["Town"]);
                 //return that everyhting worked ok
                 return true;
             }
@@ -223,6 +205,135 @@ namespace Class_Library
                 //return false indicating a problem
                 return false;
             }
-        }   
+        }
+
+
+        public string Valid(string firstName, string surname, string street, string postCode, string email, string houseNo, string phoneNo, string dateSold)
+        {
+            //create a string variable to store the error
+            string Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //if the FirstName is blank 
+            if (firstName.Length == 0)
+            {
+                //record the error
+                Error = Error + "First Name may not be blank:";
+            }
+            //if the First name is greater than 50
+            if (firstName.Length > 50)
+            {
+                //record the error 
+                Error = Error + "The First Name must be less than 50 characters";
+            }
+            try
+            {
+                //copy the date added value to the Date temp variable
+                DateTemp = Convert.ToDateTime(dateSold);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error message
+                    Error = Error + "The date cannot be in the past:";
+                }
+                //check to see if the date is greater than todays date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future :";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date";
+            }
+            //is the postcode blank
+            if (postCode.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Post Code may not be blank :";
+            }
+            //if the postcode is too long
+            if (postCode.Length > 9)
+            {
+                //record the error
+                Error = Error + "The Post Code must be less than 9 characters :";
+            }
+            //is the Street blank
+            if (street.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Street may not be blank :";
+            }
+            //if the Street is too long
+            if (street.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Street must be less than 50 characters :";
+            }
+            //is the Email blank
+            if (email.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Email may not be blank :";
+            }
+            //if the Email is too long
+            if (email.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Email must be less than 50 characters :";
+            }
+            //is the Email blank
+            if (email.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Email may not be blank :";
+            }
+            //if the Email is too long
+            if (email.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Email must be less than 50 characters :";
+            }
+            //is the Surname blank
+            if (surname.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Surname may not be blank :";
+            }
+            //if the Surname is too long
+            if (surname.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Surname must be less than 50 characters :";
+            }
+            //is the PhoneNo blank
+            if (phoneNo.Length == 0)
+            {
+                //record the error
+                Error = Error + "The PhoneNo may not be blank :";
+            }
+            //if the postcode is too long
+            if (phoneNo.Length > 11)
+            {
+                //record the error
+                Error = Error + "The PhoneNo must be less than 11 characters :";
+            }
+            //is the postcode blank
+            if (houseNo.Length == 0)
+            {
+                //record the error
+                Error = Error + "The HouseNo may not be blank :";
+            }
+            //if the postcode is too long
+            if (houseNo.Length > 6)
+            {
+                //record the error
+                Error = Error + "The HouseNo must be less than 6 characters :";
+            }
+
+            //return any error message
+            return Error;
+        }
     }
 }
