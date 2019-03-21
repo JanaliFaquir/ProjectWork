@@ -43,11 +43,15 @@
     <Compile Include="clsBatchProductionCollection.cs" />
     <Compile Include="clsCar.cs" />
     <Compile Include="clsCarCollection.cs" />
+    <Compile Include="clsColour.cs" />
+    <Compile Include="clsColourCollection.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsCustomerCollection.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsManufacturer.cs" />
     <Compile Include="clsManufacturerCollection.cs" />
+    <Compile Include="clsTown.cs" />
+    <Compile Include="clsTownCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

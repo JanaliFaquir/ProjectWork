@@ -185,7 +185,7 @@ namespace Class_Library
         {
             //create a string variable to store the erroe
             String Error = "";
-            //create a temporary variable to store date values
+            //create a temporary ariable to store date values
             DateTime DateTemp;
             //if the CarName is blank
             if (carName.Length == 0)
@@ -198,6 +198,27 @@ namespace Class_Library
             {
                 //record the error
                 Error = Error + "The car name must be less than 10 characters : ";
+            }
+            try
+            {
+                //copy the yearMade value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(yearMade);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the date is greater than today's date
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date :";
             }
             //is the model blank
             if (model.Length == 0)
@@ -226,5 +247,6 @@ namespace Class_Library
             //return any error messages
             return Error;
         }
+
     }
 }
