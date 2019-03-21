@@ -1,0 +1,9 @@
+﻿body {
+    background-position: center center;
+    margin: 10px 10px 10px 10px;
+    background-image: url('McL2.jpg');
+    //I want to stretch this image background-repeat: no-repeat;
+    width: 1000px;
+    height: 900px;
+    padding: 0px 0px 0px 0px;
+}
