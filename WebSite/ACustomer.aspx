@@ -29,7 +29,7 @@
         <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 853px; top: 404px; position: absolute; width: 168px"></asp:TextBox>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 853px; top: 212px; position: absolute; width: 168px"></asp:TextBox>
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 1150px; top: 479px; position: absolute; width: 75px; height: 39px;" Text="Cancel" />
-        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 1150px; top: 378px; position: absolute; width: 75px; height: 39px;" Text="OK" OnClick="btnOK_Click1" />
+        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 1150px; top: 378px; position: absolute; width: 75px; height: 39px;" Text="OK" />
         <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 854px; top: 493px; position: absolute; width: 168px"></asp:TextBox>
         <asp:TextBox ID="txtPhoneNo" runat="server" style="z-index: 1; left: 851px; top: 546px; position: absolute; width: 168px"></asp:TextBox>
         <asp:TextBox ID="txtDateSold" runat="server" style="z-index: 1; left: 851px; top: 593px; position: absolute; width: 168px"></asp:TextBox>
