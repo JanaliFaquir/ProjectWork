@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="clsBatchProduction.cs" />
+    <Compile Include="clsBatchProductionCollection.cs" />
     <Compile Include="clsCar.cs" />
     <Compile Include="clsCarCollection.cs" />
     <Compile Include="clsColour.cs" />
@@ -52,6 +53,9 @@
     <Compile Include="clsTown.cs" />
     <Compile Include="clsTownCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DB\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

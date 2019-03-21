@@ -740,6 +740,7 @@ namespace Test_Framework
 
         }
 
+        [TestMethod]
         public void YearMadeMinPlusOne()
 
         {
@@ -762,7 +763,8 @@ namespace Test_Framework
 
         }
 
-        public void YearMadeExtrmeMax()
+        [TestMethod]
+        public void YearMadeExtremeMax()
 
         {
             //create an instance of the class we want to create 
@@ -784,11 +786,25 @@ namespace Test_Framework
 
         }
 
+        [TestMethod]
 
+        public void YearMadeInvalidData()
+        {
+            //create an instance of the class we want to create 
+            clsManufacturer AnManufacturer = new clsManufacturer();
+            //string variable to store any error message 
+            String Error = "";
+            //set the yearmade to a non date value 
+            string YearMade = "This is not a date";
+            //invoke the methods 
+            Error = AnManufacturer.Valid(CarModel, ChairMan, Email, YearMade);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, ""); 
+        }
 
+        
 
-
-
+        }
     }
-}
+
 

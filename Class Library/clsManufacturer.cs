@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace Class_Library
 {
@@ -24,48 +22,6 @@ namespace Class_Library
         //private data member for the email property
         private String mEmail;
         private DateTime DateTemp;
-
-        //public bool Available { get; set; }
-        // public DateTime YearMade { get; set; }
-        //public int ManufacturerID { get; set; }
-        // public int BatchProductionNo { get; set; }
-        //public int PhoneNo { get; set; }
-        // public string CarModel { get; set; }
-        //public string ChairMan { get; set; }
-        // public string Email { get; set; }
-
-        public bool Find(int manufacturerID)
-        {
-            // create an instance of the data connection
-
-            clsDataConnection DB = new clsDataConnection();
-            // add the parameter for the manufacturer id to search for
-            DB.AddParameter("@ManufacturerID", manufacturerID);
-            // execute the stored procedure 
-            DB.Execute("sproc_tblManufacturer_FilterByManufacturerID");
-            // if one record is founnd (there should be either one or zero!)
-            if (DB.Count == 1)
-            {
-                // copy the data form the database to the privae data members 
-                mManufacturerID = Convert.ToInt32(DB.DataTable.Rows[0]["ManufacturerID"]);
-                mAvailable = Convert.ToBoolean(DB.DataTable.Rows[0]["Available"]);
-                mYearMade = Convert.ToDateTime(DB.DataTable.Rows[0]["YearMade"]);
-                mBatchProductionNo = Convert.ToInt32(DB.DataTable.Rows[0]["BatchProductionNo"]);
-                mPhoneNo = Convert.ToInt32(DB.DataTable.Rows[0]["PhoneNo"]);
-                mCarModel = Convert.ToString(DB.DataTable.Rows[0]["CarModel"]);
-                mChairMan = Convert.ToString(DB.DataTable.Rows[0]["ChairMan"]);
-                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
-                //return that everything worked ok 
-                return true;
-            }
-            //if no record was found 
-            else
-            {
-                //return alse indicating a problem 
-                return false;
-            }
-
-        }
 
         // public property for the manufacturer id 
         public int ManufacturerID
@@ -182,7 +138,37 @@ namespace Class_Library
             }
         }
 
+        public bool Find(int ManufacturerID)
+        {
+            // create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the manufacturer id to search for
+            DB.AddParameter("@ManufacturerID", ManufacturerID);
+            // execute the stored procedure 
+            DB.Execute("sproc_tblManufacturer_FilterByManufacturerID");
+            // if one record is founnd (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                // copy the data form the database to the privae data members 
+                mManufacturerID = Convert.ToInt32(DB.DataTable.Rows[0]["ManufacturerID"]);
+                mAvailable = Convert.ToBoolean(DB.DataTable.Rows[0]["Available"]);
+                mYearMade = Convert.ToDateTime(DB.DataTable.Rows[0]["YearMade"]);
+                mBatchProductionNo = Convert.ToInt32(DB.DataTable.Rows[0]["BatchProductionNo"]);
+                mPhoneNo = Convert.ToInt32(DB.DataTable.Rows[0]["PhoneNo"]);
+                mCarModel = Convert.ToString(DB.DataTable.Rows[0]["CarModel"]);
+                mChairMan = Convert.ToString(DB.DataTable.Rows[0]["ChairMan"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                //return that everything worked ok 
+                return true;
+            }
+            //if no record was found 
+            else
+            {
+                //return alse indicating a problem 
+                return false;
+            }
 
+        }
 
         public string Valid(string carModel, string chairMan, string email, string yearMade)
         {
@@ -246,43 +232,7 @@ namespace Class_Library
 
 
         }
-
-        public List<clsManufacturer> ManufacturerList
-        {
-            get
-            {
-                //return the private data 
-                return mManufacturerList;
-            }
-            set
-            {
-                //set the private data 
-                mManufacturerList = value;
-            }
-        }
-
-
-
-        //public property for count 
-        public int Count
-        {
-            get
-            {
-                //return the count of the list 
-                return mManufacturerList.Count;
-            }
-            set
-            {
-                //we shall worry about this later 
-            }
-        }
-
-        public List<clsManufacturer> mManufacturerList { get; private set; }
-
-
     }
-
-
 }
 
 
