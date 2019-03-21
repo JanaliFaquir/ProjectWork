@@ -16,8 +16,8 @@
             </h1>
         <h2>
         <asp:Button ID="btnAddCustomer" runat="server" style="z-index: 1; left:700px; top: 223px; position: absolute; width: 90px; height: 35px;" Text="Add Customer" />
-        <asp:Button ID="btnUpdateCustomerDetails" runat="server" style="z-index: 1; left: 875px; top: 223px; position: absolute; height: 35px; width: 165px;" Text="Update Customer Details" OnClick="btnUpdateCustomerDetails_Click" />
-        <asp:Button ID="btnDeleteCustomer" runat="server" style="z-index: 1; left: 1100px; top: 223px; position: absolute; height: 35px; width: 100px;" Text="Delete Car" OnClick="btnDeleteCustomer_Click" />
+        <asp:Button ID="btnUpdateCustomerDetails" runat="server" style="z-index: 1; left: 875px; top: 223px; position: absolute; height: 35px; width: 165px;" Text="Update Customer Details" />
+        <asp:Button ID="btnDeleteCustomer" runat="server" style="z-index: 1; left: 1100px; top: 223px; position: absolute; height: 35px; width: 100px;" Text="Delete Car"  />
         <asp:TextBox ID="txtmodel" runat="server" style="z-index: 1; left: 751px; top: 325px; position: absolute; width: 306px; height: 36px; margin-bottom: 0px"></asp:TextBox>
         <span style="color:White;"><asp:Label ID="lblModel" runat="server" style="z-index: 1; left: 785px; top: 281px; position: absolute; width: 362px" Text="Please search by Model of the car"></asp:Label></span>
         <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 1087px; top: 325px; position: absolute; width: 75px; height: 39px;" Text="Apply" />
