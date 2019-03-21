@@ -57,6 +57,8 @@
     <Compile Include="tstManufacturer.cs" />
     <Compile Include="tstCarCollection.cs" />
     <Compile Include="tstManufacturerCollection.cs" />
+    <Compile Include="tstTown.cs" />
+    <Compile Include="tstTownCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Class Library\Class Library.csproj">

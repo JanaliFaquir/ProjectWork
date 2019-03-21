@@ -47,6 +47,8 @@
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsManufacturer.cs" />
     <Compile Include="clsManufacturerCollection.cs" />
+    <Compile Include="clsTown.cs" />
+    <Compile Include="clsTownCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
