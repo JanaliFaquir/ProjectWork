@@ -12,7 +12,7 @@
         <h1>
         <asp:TextBox ID="txtDeleteCar" runat="server" style="z-index: 1; left: 723px; top: 207px; position: absolute; width: 420px; height: 37px; margin-bottom: 0px"></asp:TextBox>
         <asp:Button ID="btnYes" runat="server" style="z-index: 1; left: 772px; top: 286px; position: absolute; width: 85px; height: 39px;" Text="Yes" OnClick="btnYes_Click" />
-        <asp:Button ID="btnNo" runat="server" style="z-index: 1; left: 991px; top: 286px; position: absolute; height: 39px; bottom: 469px; width: 85px" Text="No" OnClick="btnNo_Click" />
+        <asp:Button ID="btnNo" runat="server" style="z-index: 1; left: 991px; top: 286px; position: absolute; height: 39px; bottom: 469px; width: 85px" Text="No" />
         </h1>
         </div>
     </form>
