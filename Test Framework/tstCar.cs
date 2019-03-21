@@ -55,7 +55,7 @@ namespace Test_Framework
             //create an instance of the class we want to create
             clsCar ACar = new clsCar();
             //create some test data to assign to the property
-            Int32 TestData = 3;
+            Int32 TestData = 8;
             //assign the data to the property
             ACar.CarID = TestData;
             //test to see that the two values are the same
@@ -68,7 +68,7 @@ namespace Test_Framework
             //create an instance f the class we want to create
             clsCar ACar = new clsCar();
             //create some test data to assign to the property
-            Int32 TestData = 5;
+            Int32 TestData = 3;
             //assign the data to the property
             ACar.ColourNo = TestData;
             //test to see that the two values are the same
@@ -81,7 +81,7 @@ namespace Test_Framework
             //create an instance f the class we want to create
             clsCar ACar = new clsCar();
             //create some test data to assign to the property
-            string TestData = "Audi";
+            string TestData = "BMW";
             //assign the data to the property
             ACar.CarName = TestData;
             //test to see that the two values are the same
@@ -94,7 +94,7 @@ namespace Test_Framework
             //create an instance f the class we want to create
             clsCar ACar = new clsCar();
             //create some test data to assign to the property
-            string TestData = "A6 Sedan C8";
+            string TestData = "X5 E70";
             //assign the data to the property
             ACar.Model = TestData;
             //test to see that the two values are the same
@@ -120,7 +120,7 @@ namespace Test_Framework
             //create an instance f the class we want to create
             clsCar ACar = new clsCar();
             //create some test data to assign to the property
-            decimal TestData = 44737.99m;
+            decimal TestData = 25690.00m;
             //assign the data to the property
             ACar.Price = TestData;
             //test to see that the two values are the same
@@ -133,7 +133,7 @@ namespace Test_Framework
             //create an instance f the class we want to create
             clsCar ACar = new clsCar();
             //create some test data to assign to the property
-            Int32 TestData = 5;
+            Int32 TestData = 2;
             //assign the data to the property
             ACar.Stock = TestData;
             //test to see that the two values are the same
@@ -148,7 +148,7 @@ namespace Test_Framework
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //test to see that the result is correct
@@ -165,11 +165,11 @@ namespace Test_Framework
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the car ID
-            if (ACar.CarID != 3)
+            if (ACar.CarID != 8)
             {
                 OK = false;
             }
@@ -187,11 +187,11 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
-            if (ACar.CarName != "Audi")
+            if (ACar.CarName != "BMW")
         {
                 OK = false;
             }
@@ -209,11 +209,11 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
-            if (ACar.Model != "A6 Sedan C8")
+            if (ACar.Model != "X5 E70")
         {
                 OK = false;
             }
@@ -231,7 +231,7 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
@@ -253,11 +253,11 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
-            if (ACar.ColourNo != 5)
+            if (ACar.ColourNo != 3)
         {
                 OK = false;
             }
@@ -275,11 +275,11 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
-            if (ACar.Price != 44737.99m)
+            if (ACar.Price != 25690.00m)
         {
                 OK = false;
             }
@@ -297,11 +297,11 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
-            if (ACar.Stock != 5)
+            if (ACar.Stock != 2)
         {
                 OK = false;
             }
@@ -319,11 +319,11 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
-            if (ACar.YearMade != Convert.ToDateTime("11/09/2018"))
+            if (ACar.YearMade != Convert.ToDateTime("21/03/2008"))
             {
                 OK = false;
             }
@@ -341,7 +341,7 @@ namespace Test_Framework
             // boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some data to use with the method
-            Int32 CarID = 3;
+            Int32 CarID = 8;
             //invoke the method
             Found = ACar.Find(CarID);
             //check the Car ID
@@ -487,6 +487,123 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void YearMadeExtremeMin()
+        {
+            //create an instance of the class we want to create 
+            clsCar ACar = new clsCar();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data 
+            DateTime TestDate;
+            //set the date totodays date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 years 
+            TestDate = TestDate.AddYears(-100);
+            //convert the date variable to a string variable 
+            string YearMade = TestDate.ToString();
+            //invoke the method 
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void YearMadeMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsCar ACar = new clsCar();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data 
+            DateTime TestDate;
+            //set the date totodays date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 1 day 
+            TestDate = TestDate.AddDays(-1);
+            //convert the date variable to a string variable 
+            string YearMade = TestDate.ToString();
+            //invoke the method 
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void YearMadeMin()
+        {
+            //create an instance of the class we want to create 
+            clsCar ACar = new clsCar();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data 
+            DateTime TestDate;
+            //set the date totodays date 
+            TestDate = DateTime.Now.Date;
+            //convert the date variable to a string variable 
+            string YearMade = TestDate.ToString();
+            //invoke the method 
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void YearMadeMinPlusOne()
+        {
+            //create an instance of the class we want to create 
+            clsCar ACar = new clsCar();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data 
+            DateTime TestDate;
+            //set the date totodays date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is plus 1 day 
+            TestDate = TestDate.AddDays(1);
+            //convert the date variable to a string variable 
+            string YearMade = TestDate.ToString();
+            //invoke the method 
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void YearMadeExtrmeMax()
+        {
+            //create an instance of the class we want to create 
+            clsCar ACar = new clsCar();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data 
+            DateTime TestDate;
+            //set the date totodays date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is plus 1 day 
+            TestDate = TestDate.AddYears(100);
+            //convert the date variable to a string variable 
+            string YearMade = TestDate.ToString();
+            //invoke the method 
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void YearMadeInvalidDate()
+        {
+            //create an instance of the class we want to create
+            clsCar ACar = new clsCar();
+            //string vriable to store any error message
+            String Error = "";
+            //set YearMade to a non date value
+            string YearMade = "this is not a date";
+            //invoke the method
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        
+        [TestMethod]
         public void ModelMinLessOne()
         {
             //create an instance of the class we want to create
@@ -577,6 +694,22 @@ namespace Test_Framework
             Error = ACar.Valid(CarName, Model, BodyType, YearMade);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCar ACar = new clsCar();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Model = "";
+            Model = Model.PadRight(25, 'a'); //this should fail
+            //invoke the method
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -688,6 +821,22 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void BodyTypeExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCar ACar = new clsCar();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string BodyType = "";
+            BodyType = BodyType.PadRight(20, 'a'); //this should fail
+            //invoke the method
+            Error = ACar.Valid(CarName, Model, BodyType, YearMade);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void BodyTypeMid()
         {
             //create an instance of the class we want to create
@@ -702,6 +851,5 @@ namespace Test_Framework
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
-
     }
 }
