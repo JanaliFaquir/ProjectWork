@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Class_Library
 {
-    public class Class1
+    public class clsTownCollection
     {
+        public int Count { get; set; }
+        public List<clsTown> AllTowns { get; set; }
     }
 }
